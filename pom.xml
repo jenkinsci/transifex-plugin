@@ -6,7 +6,7 @@
     <version>1.509.3</version><!-- which version of Jenkins is this plugin built against? -->
   </parent>
 
-  <groupId>com.gurkensalat.jenkins-ci.plugins</groupId>
+  <!-- <groupId>com.gurkensalat.jenkins-ci.plugins</groupId> -->
   <artifactId>transifex</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>hpi</packaging>
