@@ -1,1 +1,11 @@
+# Maven
 target/
+
+# Editor backup files
+*.bak
+*~
+
+# Eclipse project files
+.classpath
+.project
+.settings
