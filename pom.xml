@@ -83,6 +83,11 @@
         </site>
     </distributionManagement>
 
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>https://jenkins.ci.cloudbees.com/</url>
+    </ciManagement>
+
     <build>
         <pluginManagement>
             <plugins>
