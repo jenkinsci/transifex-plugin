@@ -85,8 +85,13 @@
 
     <ciManagement>
         <system>Jenkins</system>
-        <url>https://jenkins.ci.cloudbees.com/</url>
+        <url>https://jenkins.ci.cloudbees.com/job/plugins/job/${artifactId}-plugin/</url>
     </ciManagement>
+
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://issues.jenkins-ci.org/browse/JENKINS/component/18139</url>
+    </issueManagement>
 
     <build>
         <pluginManagement>
