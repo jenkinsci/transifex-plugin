@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[jenkins-transifex-plugin.jenkins-transifex-plugin-strings]
+file_filter = src/main/resources/com/gurkensalat/jenkinsci/plugins/transifex/Messages-<lang>.properties
+source_file = src/main/resources/com/gurkensalat/jenkinsci/plugins/transifex/Messages.properties
+source_lang = en
+type = PROPERTIES
