@@ -85,7 +85,7 @@
 
     <ciManagement>
         <system>Jenkins</system>
-        <url>https://jenkins.ci.cloudbees.com/job/plugins/job/${artifactId}-plugin/</url>
+        <url>https://jenkins.ci.cloudbees.com/job/plugins/job/${project.artifactId}-plugin/</url>
     </ciManagement>
 
     <issueManagement>
