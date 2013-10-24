@@ -42,6 +42,7 @@
         <maven-release-plugin.version>2.4.1</maven-release-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
         <maven-site-plugin.version>3.3</maven-site-plugin.version>
+        <maven-sortpom-plugin.version>2.2.1</maven-sortpom-plugin.version>
         <proguard-maven-plugin.version>2.0.6</proguard-maven-plugin.version>
         <properties-maven-plugin.version>1.0-alpha-2</properties-maven-plugin.version>
         <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
@@ -112,13 +113,41 @@
                     <version>${maven-project-info-reports-plugin.version}</version>
                 </plugin>
 
+                <plugin>
+                    <groupId>com.google.code.sortpom</groupId>
+                    <artifactId>maven-sortpom-plugin</artifactId>
+                    <version>${maven-sortpom-plugin.version}</version>
+                </plugin>
 
             </plugins>
         </pluginManagement>
 
         <plugins>
             <plugin>
+                <groupId>com.google.code.sortpom</groupId>
+                <artifactId>maven-sortpom-plugin</artifactId>
+                <configuration>
+                    <predefinedSortOrder>custom_1</predefinedSortOrder>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <sortProperties>true</sortProperties>
+                    <keepBlankLines>true</keepBlankLines>
+                    <sortDependencies>scope</sortDependencies>
+                    <lineSeparator>\n</lineSeparator>
+                    <nrOfIndentSpace>4</nrOfIndentSpace>
+                    <verifyFail>Warn</verifyFail>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>verify-pom</id>
+                        <goals>
+                            <goal>verify</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
 
+            <plugin>
                 <artifactId>maven-site-plugin</artifactId>
                 <configuration>
                     <skipDeploy>true</skipDeploy>
