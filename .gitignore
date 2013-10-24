@@ -1,6 +1,9 @@
 # Maven
 target/
 
+# Current debug installation
+work/
+
 # Editor backup files
 *.bak
 *~
