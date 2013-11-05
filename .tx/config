@@ -1,5 +1,6 @@
 [main]
 host = https://www.transifex.com
+minimum_perc = 80
 
 [jenkins-transifex-plugin.jenkins-transifex-plugin-strings]
 file_filter = src/main/resources/com/gurkensalat/jenkinsci/plugins/transifex/Messages-<lang>.properties
