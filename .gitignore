@@ -8,6 +8,9 @@ work/
 *.bak
 *~
 
+# copied markdown files for site
+src/site/markdown/
+
 # Eclipse project files
 .classpath
 .project
