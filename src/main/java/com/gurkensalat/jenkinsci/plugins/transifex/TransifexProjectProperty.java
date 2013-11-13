@@ -19,7 +19,7 @@ import org.kohsuke.stapler.StaplerRequest;
  * As of now this is only the URL to the Transifex project.
  * 
  * @todo Should we store the TransifexUrl instead of the String?
- * @author Stefan Saasen <stefan@coravy.com>
+ * @author Hakan Tandogan <hakan@gurkensalat.com>
  */
 public final class TransifexProjectProperty extends JobProperty<AbstractProject<?, ?>>
 {
@@ -53,12 +53,6 @@ public final class TransifexProjectProperty extends JobProperty<AbstractProject<
 		return Collections.emptyList();
 	}
 
-	/*
-	 * @Override public JobPropertyDescriptor getDescriptor() { return
-	 * DESCRIPTOR; }
-	 * 
-	 * public static final DescriptorImpl DESCRIPTOR = new DescriptorImpl();
-	 */
 	@Extension
 	public static final class DescriptorImpl extends JobPropertyDescriptor
 	{
@@ -76,6 +70,7 @@ public final class TransifexProjectProperty extends JobProperty<AbstractProject<
 
 		public String getDisplayName()
 		{
+			// TODO I18N
 			return "Transifex project page";
 		}
 
