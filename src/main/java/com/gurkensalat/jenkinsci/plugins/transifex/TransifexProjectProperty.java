@@ -70,8 +70,7 @@ public final class TransifexProjectProperty extends JobProperty<AbstractProject<
 
 		public String getDisplayName()
 		{
-			// TODO I18N
-			return "Transifex project page";
+			return Messages.transifex_TransifexProjectProperty_DisplayName();
 		}
 
 		@Override
