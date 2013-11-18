@@ -8,6 +8,9 @@ work/
 *.bak
 *~
 
+# Translation test files
+*_invalid.properties
+
 # copied markdown files for site
 src/site/markdown/
 
