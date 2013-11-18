@@ -10,7 +10,7 @@
         <!-- Base of the current LTS release -->
         <!-- <version>1.509</version> -->
         <!-- Most current released version for improved testing -->
-        <version>1.538</version>
+        <version>1.540</version>
     </parent>
 
     <groupId>com.gurkensalat.jenkins-ci.plugins</groupId>
