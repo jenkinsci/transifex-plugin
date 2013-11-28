@@ -1,10 +1,17 @@
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-    <f:entry title="${%Name}" field="name">
-        <f:textbox />
-    </f:entry>
-    <f:entry title="Path to Tx executable" field="home">
-        <f:textbox />
-    </f:entry>
-    <j:set var="toolDescriptor" value="${descriptor}" /><!-- to make this descriptor accessible from properties -->
-    <f:descriptorList descriptors="${descriptor.propertyDescriptors}" field="properties"/>
-</j:jelly>
+// Namespaces
+l = namespace("/lib/layout")
+st = namespace("jelly:stapler")
+j = namespace("jelly:core")
+t = namespace("/lib/hudson")
+f = namespace("/lib/form")
+d = namespace("jelly:define")
+
+
+f.entry(field: "name", title: _("Name")) {
+  f.textbox() 
+}
+f.entry(field: "home", title: "Path to Tx executable") {
+  f.textbox() 
+}
+def toolDescriptor = descriptor
+f.descriptorList(field: "properties", descriptors: descriptor.propertyDescriptors) 

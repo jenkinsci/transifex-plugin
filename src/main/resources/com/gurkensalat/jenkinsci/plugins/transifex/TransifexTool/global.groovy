@@ -1,11 +1,14 @@
-<?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-  <f:section title="${%transifex.project}">
-    <f:entry title="${%Transifex installations}" description="${%transifex.toolDescription}">
-      <f:hetero-list name="tool" items="${descriptor.installations}"
-                     descriptors="${descriptor.getApplicableDescriptors()}"
-                     addCaption="${transifex.addToolCaption}" hasHeader="true"
-                     deleteCaption="${transifex.deleteToolCaption}"/>
-    </f:entry>
-  </f:section>
-</j:jelly>
+// Namespaces
+l = namespace("/lib/layout")
+st = namespace("jelly:stapler")
+j = namespace("jelly:core")
+t = namespace("/lib/hudson")
+f = namespace("/lib/form")
+d = namespace("jelly:define")
+
+
+f.section(title: _("transifex.project")) {
+  f.entry(title: _("Transifex installations"), description: _("transifex.toolDescription")) {
+    f.hetero-list(items: descriptor.installations, name: "tool", deleteCaption: transifex.deleteToolCaption, descriptors: descriptor.getApplicableDescriptors(), hasHeader: "true", addCaption: transifex.addToolCaption) 
+  }
+}
