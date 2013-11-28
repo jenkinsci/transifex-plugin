@@ -1,11 +1,9 @@
 package com.gurkensalat.jenkinsci.plugins.transifex;
 
-import hudson.Extension;
+import jenkins.model.Jenkins;
 import hudson.Launcher;
 import hudson.model.BuildListener;
 import hudson.model.AbstractBuild;
-import hudson.model.AbstractProject;
-import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
 
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -42,25 +40,9 @@ public final class TransifexUploadBuilder extends Builder
 	}
 
 	@Override
-	public DescriptorImpl getDescriptor()
+	public TransifexUploadBuilderDescriptor getDescriptor()
 	{
-		return (DescriptorImpl) super.getDescriptor();
-	}
-
-	@Extension
-	public static final class DescriptorImpl extends BuildStepDescriptor<Builder>
-	{
-		@Override
-		public boolean isApplicable(Class<? extends AbstractProject> aClass)
-		{
-			return true;
-		}
-
-		@Override
-		public String getDisplayName()
-		{
-			return Messages.transifex_TransifexUploadBuilder_DisplayName();
-		}
-
+		return (TransifexUploadBuilderDescriptor) Jenkins.getInstance().getDescriptorOrDie(getClass());
+		// return (TransifexUploadBuilderDescriptor) super.getDescriptor();
 	}
 }
