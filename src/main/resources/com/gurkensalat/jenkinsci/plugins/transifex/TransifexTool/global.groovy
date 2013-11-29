@@ -9,6 +9,7 @@ d = namespace("jelly:define")
 
 f.section(title: _("transifex.project")) {
   f.entry(title: _("Transifex installations"), description: _("transifex.toolDescription")) {
-    f.hetero-list(items: descriptor.installations, name: "tool", deleteCaption: transifex.deleteToolCaption, descriptors: descriptor.getApplicableDescriptors(), hasHeader: "true", addCaption: transifex.addToolCaption) 
+	// TODO re-enable list and choice of tools
+    // f.hetero-list(items: descriptor.installations, name: "tool", deleteCaption: transifex.deleteToolCaption, descriptors: descriptor.getApplicableDescriptors(), hasHeader: "true", addCaption: transifex.addToolCaption) 
   }
 }
