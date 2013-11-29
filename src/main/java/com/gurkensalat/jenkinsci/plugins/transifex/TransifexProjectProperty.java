@@ -1,17 +1,15 @@
 package com.gurkensalat.jenkinsci.plugins.transifex;
 
-import hudson.Extension;
-import hudson.model.AbstractProject;
 import hudson.model.Action;
-import hudson.model.Job;
 import hudson.model.JobProperty;
-import hudson.model.JobPropertyDescriptor;
+import hudson.model.AbstractProject;
+
 import java.util.Collection;
 import java.util.Collections;
-import net.sf.json.JSONObject;
+
+import jenkins.model.Jenkins;
 
 import org.kohsuke.stapler.DataBoundConstructor;
-import org.kohsuke.stapler.StaplerRequest;
 
 /**
  * Stores the Transifex related project properties.
@@ -27,7 +25,7 @@ public final class TransifexProjectProperty extends JobProperty<AbstractProject<
 	/**
 	 * This will the URL to the project main branch.
 	 */
-	private String projectUrl;
+	String projectUrl;
 
 	@DataBoundConstructor
 	public TransifexProjectProperty(String projectUrl)
@@ -53,36 +51,10 @@ public final class TransifexProjectProperty extends JobProperty<AbstractProject<
 		return Collections.emptyList();
 	}
 
-	@Extension
-	public static final class DescriptorImpl extends JobPropertyDescriptor
+	@Override
+	public TransifexProjectPropertyDescriptor getDescriptor()
 	{
-
-		public DescriptorImpl()
-		{
-			super(TransifexProjectProperty.class);
-			load();
-		}
-
-		public boolean isApplicable(Class<? extends Job> jobType)
-		{
-			return AbstractProject.class.isAssignableFrom(jobType);
-		}
-
-		public String getDisplayName()
-		{
-			return Messages.transifex_TransifexProjectProperty_DisplayName();
-		}
-
-		@Override
-		public JobProperty<?> newInstance(StaplerRequest req, JSONObject formData) throws FormException
-		{
-			TransifexProjectProperty tpp = req.bindJSON(TransifexProjectProperty.class, formData);
-			if (tpp.projectUrl == null)
-			{
-				tpp = null; // not configured
-			}
-			return tpp;
-		}
-
+		return (TransifexProjectPropertyDescriptor) Jenkins.getInstance().getDescriptorOrDie(getClass());
 	}
+
 }
