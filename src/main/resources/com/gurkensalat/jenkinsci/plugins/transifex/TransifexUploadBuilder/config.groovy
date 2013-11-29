@@ -1,3 +1,5 @@
+package com.gurkensalat.jenkinsci.plugins.transifex.TransifexUploadBuilder;
+
 // Namespaces
 l = namespace("/lib/layout")
 st = namespace("jelly:stapler")
