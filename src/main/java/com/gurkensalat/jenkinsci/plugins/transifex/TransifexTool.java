@@ -125,6 +125,10 @@ public final class TransifexTool extends ToolInstallation implements NodeSpecifi
 		descriptor.save();
 	}
 
+	//
+	// The Descriptor cannot be extracted as ToolDescriptor seems to be missing
+	// protected Descriptor(Class<? extends T> clazz) {
+	//
 	@Extension
 	public static class DescriptorImpl extends ToolDescriptor<TransifexTool>
 	{
