@@ -18,3 +18,7 @@ src/site/markdown/
 .classpath
 .project
 .settings
+
+# Idea project files
+.idea
+*.iml
